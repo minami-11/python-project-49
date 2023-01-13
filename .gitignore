@@ -1,2 +1,4 @@
 #Игнорируем следующие каталоги:
 .venv/
+brain_games/**/__pycache__/
+dist/

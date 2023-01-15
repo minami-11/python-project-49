@@ -1,3 +1,9 @@
+automate_build: shell lint build publish
+	pip list
+
+shell:
+	poetry shell
+
 lint:
 	poetry run flake8 brain_games
 

@@ -8,4 +8,4 @@
 
 
 ### How Brain-game works:
-[![asciicast](https://asciinema.org/a/AkReK8R6w35dJIzkA5TCOim5Z.svg)](https://asciinema.org/a/AkReK8R6w35dJIzkA5TCOim5Z)
+[![asciicast](https://asciinema.org/a/mKzqL9q7ngr7MFCEJV9qQMUHA.svg)](https://asciinema.org/a/mKzqL9q7ngr7MFCEJV9qQMUHA)

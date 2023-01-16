@@ -4,6 +4,8 @@ version = "0.1.0"
 description = "Brain Games"
 authors = ["minami-11 <madk0te@yandex.ru>"]
 readme = "README.md"
+repository = "git@github.com:minami-11/python-project-49.git"
+classifiers = ["Topic :: Games/Entertainment :: Fortune Cookies"]
 packages = [{include = "brain_games" }]
 
 [tool.poetry.dependencies]

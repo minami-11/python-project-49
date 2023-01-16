@@ -1,65 +1,10 @@
 from random import randint, choice
 import prompt
-
-
-def even_odd_checker(number: int) -> str:
-    return ['yes', 'no'][number % 2]
-
-
-def calc_checker(math_string: str) -> int:
-    '''Сonverts math_string to a mathematical operation'''
-    a, math_operator, b = math_string.split()
-    action_list = {'+': int(a) + int(b),
-                   '-': int(a) - int(b),
-                   '*': int(a) * int(b)}
-    return action_list.get(math_operator)
-
-
-def gcd_checker(numb_string: str):
-    '''Euclidean algorithm for gcd'''
-    a, b = map(int, numb_string.split())
-    if a == 0 and b == 0:
-        return 0
-    elif a == 0 or b == 0:
-        return max(a, b)
-    while a != b:
-        if a >= b:
-            a = a - b
-        else:
-            b = b - a
-    return a
-
-
-def progression_checker() -> list:
-    '''Random arithmetic progression -> [progression str, correct answer]'''
-    progress_length = randint(5, 10)
-    progress_point = randint(0, 50)
-    progress_step = randint(2, 10)
-    question = []
-    for _ in range(progress_length):
-        question.append(str(progress_point))
-        progress_point += progress_step
-    guess_numb = choice(question)
-    question[question.index(guess_numb)] = '..'
-    return [' '.join(question)] + [str(guess_numb)]
-
-
-def prime_checker(number: int) -> str:
-    '''Prime or not'''
-    match number:
-        case 1: return 'no'
-        case 2: return 'yes'
-    divider = 2
-    result = []
-    while True:
-        if number % divider == 0:
-            result.append(divider)
-        elif divider > number / 2:
-            break
-        if len(result) > 1:
-            return 'no'
-        divider += 1
-    return 'yes'
+from brain_games.games.even_odd import even_odd_checker
+from brain_games.games.calculate import calc_checker
+from brain_games.games.gcd import gcd_checker
+from brain_games.games.progression import progression_checker
+from brain_games.games.prime import prime_checker
 
 
 def game_generator(game_name: str) -> (str | int):

@@ -44,6 +44,24 @@ def progression_checker() -> list:
     return [' '.join(question)] + [str(guess_numb)]
 
 
+def prime_checker(number: int) -> str:
+    '''Prime or not'''
+    match number:
+        case 1: return 'no'
+        case 2: return 'yes'
+    divider = 2
+    result = []
+    while True:
+        if number % divider == 0:
+            result.append(divider)
+        elif divider > number / 2:
+            break
+        if len(result) > 1:
+            return 'no'
+        divider += 1
+    return 'yes'
+
+
 def game_generator(game_name: str) -> (str | int):
     '''Generates questions for games'''
     math_actions = ['+', '-', '*']
@@ -52,8 +70,19 @@ def game_generator(game_name: str) -> (str | int):
     game_pack = {'even_odd': a,
                  'calc': ' '.join(map(str, [a, choice(math_actions), b])),
                  'gcd': f'{a} {b}',
-                 'progress': progression_checker()}
+                 'progress': progression_checker(),
+                 'prime': a}
     return game_pack.get(game_name)
+
+
+def game_answer(game_name: str, guess: (str | int)) -> str:
+    '''Returns correct answer for each game'''
+    match game_name:
+        case 'even_odd': return even_odd_checker(guess)
+        case 'calc': return str(calc_checker(guess))
+        case 'gcd': return str(gcd_checker(guess))
+        case 'progress': return None
+        case 'prime': return prime_checker(guess)
 
 
 def gamelogic_frame(game_name: str) -> str:
@@ -61,16 +90,12 @@ def gamelogic_frame(game_name: str) -> str:
     answer_pack = {'correct': 0, 'wrong': 0}
     while all([answer_pack['correct'] < 3, answer_pack['wrong'] < 1]):
         if game_name == 'progress':
-            guess, progress_answer = game_generator(game_name)
+            guess, game_correct_answer = game_generator(game_name)
         else:
             guess = game_generator(game_name)
+            game_correct_answer = game_answer(game_name, guess)
         print(f'Question: {guess}')
         user_answer = prompt.string('Your answer: ')
-        match game_name:
-            case 'even_odd': game_correct_answer = even_odd_checker(guess)
-            case 'calc': game_correct_answer = str(calc_checker(guess))
-            case 'gcd': game_correct_answer = str(gcd_checker(guess))
-            case 'progress': game_correct_answer = progress_answer
         if game_correct_answer == user_answer:
             answer_pack['correct'] += 1
             print('Correct!')

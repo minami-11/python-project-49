@@ -1,15 +1,11 @@
 # !/usr/bin/python3
 
-from brain_games.cli import welcome_user
-from brain_games.game_engine import gamelogic_frame, win_or_fall_message
+from brain_games.game_engine import game_frame
 
 
 def main():
     '''Guess even or odd. 3 correct or 1 fall'''
-    USER = welcome_user()
-    print('Answer "yes" if the number is even, otherwise answer "no".')
-    func_result = gamelogic_frame('even_odd')
-    win_or_fall_message(func_result, USER)
+    game_frame('even_odd')
 
 
 if __name__ == '__main__':

@@ -1,3 +1,14 @@
+from random import randint
+
+
+def start_message():
+    return 'Answer "yes" if given number is prime. Otherwise answer "no".'
+
+
+def question():
+    return randint(0, 50)
+
+
 def prime_checker(number: int) -> str:
     '''Prime or not'''
     match number:

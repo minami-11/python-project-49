@@ -1,4 +1,7 @@
-#Игнорируем следующие каталоги:
+#Ignore these dirs:
 .venv/
 brain_games/**/__pycache__/
 dist/
+
+#Ignore these files:
+clipboard.py

@@ -9,7 +9,7 @@ def question():
     return randint(0, 50)
 
 
-def prime_checker(number: int) -> str:
+def checker(number: int) -> str:
     '''Prime or not'''
     match number:
         case 1: return 'no'

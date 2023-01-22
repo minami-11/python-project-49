@@ -9,5 +9,6 @@ def question():
     return randint(0, 50)
 
 
-def even_odd_checker(number: int) -> str:
+def checker(number: int) -> str:
+    '''Yes if even, else returns no'''
     return ['yes', 'no'][number % 2]

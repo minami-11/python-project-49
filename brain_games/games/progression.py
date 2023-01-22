@@ -5,7 +5,7 @@ def start_message():
     return 'What number is missing in the progression?'
 
 
-def question():
+def question() -> str:
     '''Random arithmetic progression'''
     progress_length = randint(5, 10)
     progress_point = randint(0, 50)
@@ -19,7 +19,7 @@ def question():
     return ' '.join(arithm_progress)
 
 
-def progression_checker(string: str):
+def checker(string: str) -> str:
     '''Returns missing number in progression'''
     progress = string.split()
     x = progress.index('..')
@@ -30,5 +30,7 @@ def progression_checker(string: str):
             break
         count += 1
     if x == len(progress) - 1:
-        return int(progress[x - 1]) + step
-    return (int(progress[x + 1]) - step, int(progress[x - 1]) + step)[bool(x)]
+        return str(int(progress[x - 1]) + step)
+    return str(
+        (int(progress[x + 1]) - step, int(progress[x - 1]) + step)[bool(x)]
+    )

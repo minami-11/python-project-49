@@ -1,26 +1,16 @@
 from random import randint
+from math import gcd
 
 
-def start_message():
-    return 'Find the greatest common divisor of given numbers.'
+def question_checker() -> list:
+    '''Generates random math numb and finds it's gcd'''
+    a = randint(MIN_LIM, MAX_LIM)
+    b = randint(MIN_LIM, MAX_LIM)
+    question = f'{a} {b}'
+    answer = str(gcd(a, b))
+    return [question, answer]
 
 
-def question() -> str:
-    a = randint(0, 50)
-    b = randint(0, 50)
-    return f'{a} {b}'
-
-
-def checker(numb_string: str) -> str:
-    '''Euclidean algorithm for gcd'''
-    a, b = map(int, numb_string.split())
-    if a == 0 and b == 0:
-        return '0'
-    elif a == 0 or b == 0:
-        return str(max(a, b))
-    while a != b:
-        if a >= b:
-            a = a - b
-        else:
-            b = b - a
-    return str(a)
+START_MESSAGE = 'Find the greatest common divisor of given numbers.'
+MIN_LIM = 0
+MAX_LIM = 50

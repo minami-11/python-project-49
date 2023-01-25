@@ -1,14 +1,13 @@
 from random import randint
 
 
-def start_message():
-    return 'Answer "yes" if the number is even, otherwise answer "no".'
+def question_checker() -> list:
+    '''Generates random numb and returns Yes if even, else No'''
+    question = randint(MIN_LIM, MAX_LIM)
+    answer = 'no' if question % 2 else 'yes'
+    return [question, answer]
 
 
-def question():
-    return randint(0, 50)
-
-
-def checker(number: int) -> str:
-    '''Yes if even, else returns no'''
-    return ['yes', 'no'][number % 2]
+START_MESSAGE = 'Answer "yes" if the number is even, otherwise answer "no".'
+MIN_LIM = 0
+MAX_LIM = 50

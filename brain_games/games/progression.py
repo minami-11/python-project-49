@@ -1,36 +1,26 @@
 from random import randint, choice
 
 
-def start_message():
-    return 'What number is missing in the progression?'
-
-
-def question() -> str:
-    '''Random arithmetic progression'''
-    progress_length = randint(5, 10)
-    progress_point = randint(0, 50)
-    progress_step = randint(2, 10)
+def question_checker() -> list:
+    '''Generates random arithmetic progression with missing number'''
+    progress_length = randint(LENGTH_MIN, LENGTH_MAX)
+    progress_point = randint(MIN_LIM, MAX_LIM)
+    progress_step = randint(STEP_MIN, STEP_MAX)
     arithm_progress = []
     for _ in range(progress_length):
         arithm_progress.append(str(progress_point))
         progress_point += progress_step
     guess_numb = choice(arithm_progress)
     arithm_progress[arithm_progress.index(guess_numb)] = '..'
-    return ' '.join(arithm_progress)
+    question = ' '.join(arithm_progress)
+    answer = str(guess_numb)
+    return [question, answer]
 
 
-def checker(string: str) -> str:
-    '''Returns missing number in progression'''
-    progress = string.split()
-    x = progress.index('..')
-    count = 0
-    while True:
-        if progress[count].isdigit() and progress[count + 1].isdigit():
-            step = int(progress[count + 1]) - int(progress[count])
-            break
-        count += 1
-    if x == len(progress) - 1:
-        return str(int(progress[x - 1]) + step)
-    return str(
-        (int(progress[x + 1]) - step, int(progress[x - 1]) + step)[bool(x)]
-    )
+START_MESSAGE = 'What number is missing in the progression?'
+MIN_LIM = 0
+MAX_LIM = 50
+LENGTH_MIN = 5
+LENGTH_MAX = 10
+STEP_MIN = 2
+STEP_MAX = 10

@@ -32,7 +32,7 @@ publish:
 	poetry publish --dry-run
 
 
-#Установка пакета из Операционной Системы (добавим --user после install)
+#For installing package from operated system (add "--user" after "install")
 package-install:
 	python3 -m pip install dist/*.whl
 

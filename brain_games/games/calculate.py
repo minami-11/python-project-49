@@ -1,6 +1,11 @@
 from random import randint, choice
 
 
+START_MESSAGE = 'What is the result of the expression?'
+MIN_LIM = 0
+MAX_LIM = 50
+
+
 def question_checker() -> list:
     '''Generates random math expression and it's result'''
     a = randint(MIN_LIM, MAX_LIM)
@@ -13,8 +18,3 @@ def question_checker() -> list:
                    '*': int(a) * int(b)}
     answer = str(action_list.get(math_operator))
     return [question, answer]
-
-
-START_MESSAGE = 'What is the result of the expression?'
-MIN_LIM = 0
-MAX_LIM = 50

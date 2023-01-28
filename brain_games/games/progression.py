@@ -1,6 +1,15 @@
 from random import randint, choice
 
 
+START_MESSAGE = 'What number is missing in the progression?'
+MIN_LIM = 0
+MAX_LIM = 50
+LENGTH_MIN = 5
+LENGTH_MAX = 10
+STEP_MIN = 2
+STEP_MAX = 10
+
+
 def question_checker() -> list:
     '''Generates random arithmetic progression with missing number'''
     progress_length = randint(LENGTH_MIN, LENGTH_MAX)
@@ -15,12 +24,3 @@ def question_checker() -> list:
     question = ' '.join(arithm_progress)
     answer = str(guess_numb)
     return [question, answer]
-
-
-START_MESSAGE = 'What number is missing in the progression?'
-MIN_LIM = 0
-MAX_LIM = 50
-LENGTH_MIN = 5
-LENGTH_MAX = 10
-STEP_MIN = 2
-STEP_MAX = 10

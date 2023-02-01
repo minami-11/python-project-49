@@ -11,7 +11,7 @@ def prime(number: int) -> str:
     match number:
         case 1: return 'no'
         case 2: return 'yes'
-    if all(number % divider for divider in range(2, int(number / 2))):
+    if all(number % divider for divider in range(2, int(number / 2 + 1))):
         return 'yes'
     return 'no'
 

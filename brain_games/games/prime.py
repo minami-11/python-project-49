@@ -9,7 +9,7 @@ MAX_LIM = 50
 def prime(number: int) -> str:
     '''Yes if prime, else no'''
     match number:
-        case 1: return 'no'
+        case (0 | 1): return 'no'
         case 2: return 'yes'
     if all(number % divider for divider in range(2, int(number / 2 + 1))):
         return 'yes'

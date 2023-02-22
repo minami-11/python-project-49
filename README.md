@@ -1,5 +1,12 @@
+#### Hexlet tests, linter status and CodeClimate marks:
+[![Actions Status](https://github.com/minami-11/python-project-49/workflows/hexlet-check/badge.svg)](https://github.com/minami-11/python-project-49/actions)
+[![Maintainability](https://api.codeclimate.com/v1/badges/1b7630544f96183d8c54/maintainability)](https://codeclimate.com/github/minami-11/python-project-49/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/1b7630544f96183d8c54/test_coverage)](https://codeclimate.com/github/minami-11/python-project-49/test_coverage)
+
+
 ### Description:
 Here is the Brain Games pack. The pack contains 5 games:
+0. brain-games: greets the player
 1. brain-even: guess is number even or odd
 2. brain-calc: guess the result of math expression
 3. brain-gcd: guess the greatest common divisor of given number
@@ -7,7 +14,7 @@ Here is the Brain Games pack. The pack contains 5 games:
 5. brain-prime: guess whethere number is prime or not
 
 #### Game process is pretty simple:
-* 3 Correct answers and You win. 1 wrong answer and You lose 
+* 3 Correct answers and You win. 1 wrong answer and You lose
 
 #### Installation process and commands:
 Staying in the root project directory use these commands:
@@ -30,16 +37,9 @@ make automate_build	#start commans 1by1: shell, lint, build, publish, pip list
 make brain-games	#poetry will start brain-games
 make brain-<game_name>	#poetry will run one of these games: even, calc, gcd, progression, prime
 ```
- 
-
-#### Hexlet tests, linter status and CodeClimate marks:
-[![Actions Status](https://github.com/minami-11/python-project-49/workflows/hexlet-check/badge.svg)](https://github.com/minami-11/python-project-49/actions)
-[![Maintainability](https://api.codeclimate.com/v1/badges/1b7630544f96183d8c54/maintainability)](https://codeclimate.com/github/minami-11/python-project-49/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/1b7630544f96183d8c54/test_coverage)](https://codeclimate.com/github/minami-11/python-project-49/test_coverage)
-
 
 ### Installation:
-[![asciicast](https://asciinema.org/a/y4mBHr5ESINsNhf5B4G17ylmQ.svg)](https://asciinema.org/a/y4mBHr5ESINsNhf5B4G17ylmQ)
+[![asciicast](https://asciinema.org/a/6hDvHoGVzmLfY5Sp8Z0Uo11Az.svg)](https://asciinema.org/a/6hDvHoGVzmLfY5Sp8Z0Uo11Az)
 
 ### How Brain Games works:
-[![asciicast](https://asciinema.org/a/vi1HcnTdoAcE4lHKIwe0Q5rki.svg)](https://asciinema.org/a/vi1HcnTdoAcE4lHKIwe0Q5rki)
+[![asciicast](https://asciinema.org/a/QnXAfuwYyag0PMDZraevpkp4p.svg)](https://asciinema.org/a/QnXAfuwYyag0PMDZraevpkp4p)

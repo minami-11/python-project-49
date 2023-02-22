@@ -19,8 +19,5 @@ def make_question_and_answer() -> list:
     '''Generates random numb and returns Yes if prime, else No'''
     question = randint(MIN_LIMIT, MAX_LIMIT)
     answer_bool = is_prime(question)
-    if answer_bool:
-        answer = 'yes'
-    else:
-        answer = 'no'
+    answer = 'yes' if answer_bool else 'no'
     return [question, answer]
